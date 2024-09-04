@@ -327,11 +327,7 @@ body header .user-info .notification-icon .badge {
 .dashboard .most-days-away ul li span {
     margin-left: auto;
 }
-.leave-requests {
-    /* background-color: #333; */
-    /* padding: 20px;
-    border-radius: 10px; */
-}
+
 .leave-body{
     background-color: var(--gray-black);
     border-radius: 10px;
