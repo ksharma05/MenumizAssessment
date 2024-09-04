@@ -139,11 +139,11 @@ body header .user-info img {
     border-radius: 50%;
     margin-left: 10px;
 }
-body header .user-info .notification {
+body header .user-info .notification-icon {
     margin-right: 20px;
     position: relative;
 }
-body header .user-info .notification .badge {
+body header .user-info .notification-icon .badge {
     background-color: #ffcc00;
     color: #000;
     border-radius: 50%;
@@ -534,3 +534,46 @@ table.dataTable > tbody > tr > th, table.dataTable > tbody > tr > td:nth-child(2
     left: 0;
     right: 0;
 }
+
+#notificationPanel {
+    /* display: none; */
+    position: absolute;
+    right: -5vw;
+    width: 28vw;
+    z-index: 999;
+    background-color: #151515;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+  }
+
+  .notification-panel-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.notification {
+    background-color: #272727;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: start;
+    margin-bottom: 16px;
+  }
+  .notification img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+  .notification p {
+    margin: 0;
+  }
+  .notification .name {
+    font-weight: bold;
+  }
+  .notification .time {
+    font-size: 14px;
+    color: #a0aec0;
+  }

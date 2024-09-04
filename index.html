@@ -59,15 +59,67 @@
             src="./assets/img/Dashboard/Top/Top/Right/Frame 1000001268.svg"
             width="30"
           />
-          <div class="notification">
-            <img
-              alt="User Profile Picture"
-              height="50"
-              src="./assets/img/Leave/Dashboard/Top/Top/Right/Top/Right/Notifications.svg"
-              width="50"
-            />
-            <span class="badge"> 1 </span>
-          </div>
+        <div class="notification-icon" onclick="openNotificationPanel()">
+  <img
+    alt="User Profile Picture"
+    height="50"
+    src="./assets/img/Leave/Dashboard/Top/Top/Right/Top/Right/Notifications.svg"
+    width="50"
+  />
+  <span class="badge"> 5 </span>
+  <div id="notificationPanel" style="display: none;">
+    <div class="notification-panel-header">
+        <h2>Notifications</h2>
+        <p>Mark all as Read</p>
+    </div>
+    <div class="notification">
+        <img alt="Profile picture of Mark Jacobs" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-1OpVMepzmPhdV3P9dsmgrSgD.png?st=2024-09-04T19%3A12%3A16Z&amp;se=2024-09-04T21%3A12%3A16Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T18%3A57%3A27Z&amp;ske=2024-09-05T18%3A57%3A27Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=eYP8bzt87KRRf4Huy4z1ZPvOV7XfDpOvMFmVJCD3/fA%3D"/>
+        <div>
+          <p><span class="name">Mark Jacobs</span> has applied for leave and is currently awaiting approval.</p>
+          <p class="time">Today at 09:42 AM</p>
+        </div>
+      </div>
+      <div class="notification">
+        <img alt="Profile picture of Charlie Kristen" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-7n4m2bSaT4AGmDbH2I1WM4F0.png?st=2024-09-04T19%3A12%3A19Z&amp;se=2024-09-04T21%3A12%3A19Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T19%3A07%3A30Z&amp;ske=2024-09-05T19%3A07%3A30Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=ugA%2Bx/8Ejhayyan%2BU5yMRH43Nwxasj9L4hwGsUa1Y5Q%3D"/>
+        <div>
+          <p><span class="name">Charlie Kristen</span> has applied for leave and is currently awaiting approval.</p>
+          <p class="time">Today at 08:23 AM</p>
+        </div>
+      </div>
+      <div class="notification">
+        <img alt="Profile picture of Nur Fariha binti Maslan" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-QLUDyo3EgdXWzPEZgeQFyjqG.png?st=2024-09-04T19%3A12%3A18Z&amp;se=2024-09-04T21%3A12%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T19%3A08%3A01Z&amp;ske=2024-09-05T19%3A08%3A01Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=KgsH%2BN4FRlzKvVNTkTNDypbIzMJY6nb85zCkRxJlwUU%3D"/>
+        <div>
+          <p><span class="name">Nur Fariha binti Maslan</span> has applied for leave and is currently awaiting approval.</p>
+          <p class="time">Yesterday at 17:30 PM</p>
+        </div>
+      </div>
+      <div class="notification">
+        <img alt="Profile picture of Nur Fariha binti Maslan" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-QLUDyo3EgdXWzPEZgeQFyjqG.png?st=2024-09-04T19%3A12%3A18Z&amp;se=2024-09-04T21%3A12%3A18Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T19%3A08%3A01Z&amp;ske=2024-09-05T19%3A08%3A01Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=KgsH%2BN4FRlzKvVNTkTNDypbIzMJY6nb85zCkRxJlwUU%3D"/>
+        <div>
+          <p>Nur Fariha binti Maslan has applied for leave and is currently awaiting approval.</p>
+          <p class="time">Yesterday at 14:45 PM</p>
+        </div>
+      </div>
+      <div class="notification">
+        <img alt="Profile picture of Nishant Talwar" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-UuB2AistdMRgPS9YRquxoShe.png?st=2024-09-04T19%3A12%3A19Z&amp;se=2024-09-04T21%3A12%3A19Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-04T19%3A07%3A19Z&amp;ske=2024-09-05T19%3A07%3A19Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=3MJqj0NV8dt5qAOBoDwEfPVdnc0tdFiqyhMpeDb2gp8%3D"/>
+        <div>
+          <p>Nishant Talwar has applied for leave and is currently awaiting approval.</p>
+          <p class="time">Yesterday at 14:42 PM</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  function openNotificationPanel() {
+    var notificationPanel = document.getElementById("notificationPanel");
+    if (notificationPanel.style.display === "block") {
+      notificationPanel.style.display = "none";
+    } else {
+      notificationPanel.style.display = "block";
+    }
+  }
+</script>
           <img
             alt="User Profile Picture"
             height="40"
