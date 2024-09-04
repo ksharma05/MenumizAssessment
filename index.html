@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HRHR Dashboard</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css"
+    />
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-section">
+        <div class="logo">
+          <img
+            alt="HRHR Logo"
+            height="40"
+            src="./assets/img/Dashboard/Left/Brand/Group 1000003120.png"
+          />
+          <img
+            alt="HRHR Logo"
+            height="25"
+            src="./assets/img/Dashboard/Left/Brand/Icon.svg"
+            width="25"
+          />
+          <!-- <span> HRHR </span> -->
+        </div>
+      </div>
+      <div class="search-bar-section">
+        <div>
+          <img
+            alt="User Profile Picture"
+            height="30"
+            src="./assets/img/Top/Frame 1000003133.svg"
+          />
+        </div>
+
+        <div class="user-info">
+          <div class="search-bar">
+            <i class="fas fa-search"> </i>
+            <input placeholder="Enter any keyword..." type="text" />
+          </div>
+          <img
+            alt="User Profile Picture"
+            height="30"
+            src="./assets/img/Dashboard/Top/Top/Right/Frame 1000001268.svg"
+            width="30"
+          />
+          <div class="notification">
+            <img
+              alt="User Profile Picture"
+              height="50"
+              src="./assets/img/Leave/Dashboard/Top/Top/Right/Top/Right/Notifications.svg"
+              width="50"
+            />
+            <span class="badge"> 1 </span>
+          </div>
+          <img
+            alt="User Profile Picture"
+            height="40"
+            src="./assets/img/Top/Top/Right/Top/Right/IMG_2422 3.svg"
+            width="40"
+          />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="sidebar">
+        <ul class="menu">
+          <li>
+            <a href="#">
+              <i class="fas fa-tachometer-alt"> </i>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-calendar-alt"> </i>
+              Calendar
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-users"> </i>
+              Recruitment
+              <span class="badge"> 10 </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-friends"> </i>
+              Employees
+            </a>
+          </li>
+          <li class="active">
+            <a href="#">
+              <i class="fas fa-plane"> </i>
+              Leave
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-sitemap"> </i>
+              Organisation
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-file-invoice-dollar"> </i>
+              Billings
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-comments"> </i>
+              Engagement
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-cogs"> </i>
+              Development
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-chart-line"> </i>
+              Performance
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-file-alt"> </i>
+              Reports
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-container">
+        <div class="tabs">
+          <a class="active" href="#"> Leave Management </a>
+          <a href="#"> Leave Requests </a>
+          <a href="#"> Leave Types </a>
+          <a href="#"> Leave Calendar </a>
+          <a href="#"> Leave Report </a>
+          <a href="#"> Leave Approver </a>
+          <a href="#">
+            <img
+              alt="User Profile Picture"
+              height="20"
+              src="./assets/img/Dashboard/Top/Top/Right/Frame 1000001268.svg"
+              width="20"
+            />
+          </a>
+        </div>
+        <div class="dashboard-container" style="display: none">
+          <h2>Dashboard</h2>
+          <div class="dashboard">
+            <div class="heatmap">
+              <div class="heatmap-header">
+                <h3>Heatmap</h3>
+                <select>
+                  <option value="sickday" selected>Sickday</option>
+                </select>
+                <select>
+                  <option value="March 2023" selected>March 2023</option>
+                </select>
+              </div>
+              <div class="days">
+                <div class="day" data-day="Mon">Mon</div>
+                <div class="day" data-day="Tue">Tue</div>
+                <div class="day" data-day="Wed">Wed</div>
+                <div class="day" data-day="Thu">Thu</div>
+                <div class="day selected" data-day="Fri">Fri</div>
+                <div class="day" data-day="Sat">Sat</div>
+                <div class="day" data-day="Sun">Sun</div>
+              </div>
+              <div class="stats">
+                <div class="stat">
+                  <canvas id="sickLeave" width="120" height="120"></canvas>
+                  <div>Sick Leave</div>
+                </div>
+                <div class="stat">
+                  <canvas id="annualLeave" width="120" height="120"></canvas>
+                  <div>Annual Leave</div>
+                </div>
+                <div class="stat">
+                  <canvas id="emergencyLeave" width="120" height="120"></canvas>
+                  <div>Emergency Leave</div>
+                </div>
+              </div>
+              <p class="footer">Most popular day: Friday</p>
+            </div>
+            <div class="most-days-away">
+              <div class="heatmap-header">
+                <h3>Most Days Away</h3>
+              </div>
+              <ul>
+                <li>
+                  <img
+                    alt="Mark Jacobs"
+                    height="40"
+                    src="./assets/img/Heatmap/Avatar.svg"
+                    width="40"
+                  />
+                  Mark Jacobs
+                  <span> 5.0 day(s) </span>
+                </li>
+                <li>
+                  <img
+                    alt="Charlie Kristen"
+                    height="40"
+                    src="./assets/img/Heatmap/Ellipse 14.svg"
+                    width="40"
+                  />
+                  Charlie Kristen
+                  <span> 3.5 day(s) </span>
+                </li>
+                <li>
+                  <img
+                    alt="Nur Fariha binti Maslan"
+                    src="./assets/img/Heatmap/Ellipse 14-1.svg"
+                  />
+                  Nur Fariha binti Maslan
+                  <span> 1.0 day(s) </span>
+                </li>
+                <li>
+                  <img
+                    alt="Nishant Talwar"
+                    height="40"
+                    src="./assets/img/Heatmap/Ellipse 14-2.svg"
+                    width="40"
+                  />
+                  Nishant Talwar
+                  <span> 1.0 day(s) </span>
+                </li>
+              </ul>
+              <p class="footer">TOTAL: 9.5 day(s)</p>
+            </div>
+          </div>
+        </div>
+        <div class="leave-requests" style="display: none">
+          <div class="leave-header">
+            <h2>Leave Requests</h2>
+            <div class="leave-view-button-container">
+              <div class="button-list-view active-view">List View</div>
+              <div class="button-month-view">Month View</div>
+            </div>
+          </div>
+          <div class="leave-body">
+            <div class="leave-tabs">
+              <div>
+                <span class="active"> All </span>
+                <span> Approved </span>
+                <span> Rejected </span>
+              </div>
+              <div>
+                <i class="fas fa-chevron-left"> </i>
+                <span> March 2023 </span>
+                <i class="fas fa-calendar-alt"> </i>
+                <i class="fas fa-chevron-right"> </i>
+              </div>
+            </div>
+            <table id="leaveRequestsTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>NAME</th>
+                  <th>PERIOD</th>
+                  <th>DAY(S)</th>
+                  <th>LEAVE TYPE</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <img
+                      alt="Mark Jacobs"
+                      height="40"
+                      src="./assets/img/Heatmap/Avatar.svg"
+                      width="40"
+                    />
+                    Mark Jacobs
+                  </td>
+                  <td>31 Mar, 2023 09:00 AM - 31 Mar, 2023 18:00 PM</td>
+                  <td>1.0</td>
+                  <td>Annual Leave</td>
+                  <td class="actions">
+                    <button class="reject">REJECT</button>
+                    <button class="approve">APPROVE</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <img
+                      alt="Charlie Kristen"
+                      height="40"
+                      src="./assets/img/Heatmap/Ellipse 14.svg"
+                      width="40"
+                    />
+                    Charlie Kristen
+                  </td>
+                  <td>10 Apr, 2023 09:00 AM - 11 Apr, 2023 18:00 PM</td>
+                  <td>2.0</td>
+                  <td>Annual Leave</td>
+                  <td class="actions">
+                    <button class="reject">REJECT</button>
+                    <button class="approve">APPROVE</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <img
+                      alt="Nur Fariha binti Maslan"
+                      src="./assets/img/Heatmap/Ellipse 14-1.svg"
+                    />
+                    Nur Fariha binti Maslan
+                  </td>
+                  <td>21 Apr, 2023 09:00 AM - 24 Apr, 2023 18:00 PM</td>
+                  <td>2.0</td>
+                  <td>Hospital Leave</td>
+                  <td class="actions">
+                    <button class="reject">REJECT</button>
+                    <button class="approve">APPROVE</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="leave-requests leave-card-container">
+          <div class="leave-header">
+            <h2>Leave Requests</h2>
+            <div class="leave-view-button-container">
+              <div class="button-list-view active-view">List View</div>
+              <div class="button-month-view">Month View</div>
+            </div>
+          </div>
+          <div class="leave-body">
+            <div class="leave-tabs">
+              <div>
+                <span class="active"> All </span>
+                <span> Approved </span>
+                <span> Rejected </span>
+              </div>
+              <div>
+                <i class="fas fa-chevron-left"> </i>
+                <span> March 2023 </span>
+                <i class="fas fa-calendar-alt"> </i>
+                <i class="fas fa-chevron-right"> </i>
+              </div>
+            </div>
+            <div class="leave-card">
+                <div class="highlight">
+                </div>
+                <div class="header">
+                 <img alt="Profile picture of Mark Jacobs" height="50" src="./assets/img/Heatmap/Avatar.svg" width="50"/>
+                 <div class="name">
+                  Mark Jacobs
+                 </div>
+                 <div class="actions">
+                  <button class="reject">
+                   REJECT
+                  </button>
+                  <button class="approve">
+                   APPROVE
+                  </button>
+                 </div>
+                </div>
+                <div class="details">
+                 <div>
+                  <span>
+                   START DATE
+                  </span>
+                  <span class="value">
+                   31 Mar, 2023 09:00 AM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   END DATE
+                  </span>
+                  <span class="value">
+                   31 Mar, 2023 18:00 PM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   DAY(S)
+                  </span>
+                  <span class="value">
+                   1.0
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   LEAVE TYPE
+                  </span>
+                  <span class="value">
+                   Annual Leave
+                  </span>
+                 </div>
+                </div>
+               </div>
+               <div class="leave-card">
+                <div class="highlight">
+                </div>
+                <div class="header">
+                 <img alt="Profile picture of Charlie Kristen" height="50" src="./assets/img/Heatmap/Avatar.svg" width="50"/>
+                 <div class="name">
+                  Charlie Kristen
+                 </div>
+                 <div class="actions">
+                  <button class="reject">
+                   REJECT
+                  </button>
+                  <button class="approve">
+                   APPROVE
+                  </button>
+                 </div>
+                </div>
+                <div class="details">
+                 <div>
+                  <span>
+                   START DATE
+                  </span>
+                  <span class="value">
+                   10 Apr, 2023 09:00 AM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   END DATE
+                  </span>
+                  <span class="value">
+                   11 Apr, 2023 18:00 PM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   DAY(S)
+                  </span>
+                  <span class="value">
+                   2.0
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   LEAVE TYPE
+                  </span>
+                  <span class="value">
+                   Annual Leave
+                  </span>
+                 </div>
+                </div>
+               </div>
+               <div class="leave-card">
+                <div class="highlight">
+                </div>
+                <div class="header">
+                 <img alt="Profile picture of Nur Fariha Binti Maslan" src="./assets/img/Heatmap/Avatar.svg"/>
+                 <div class="name">
+                  Nur Fariha Binti Maslan
+                 </div>
+                 <div class="actions">
+                  <button class="reject">
+                   REJECT
+                  </button>
+                  <button class="approve">
+                   APPROVE
+                  </button>
+                 </div>
+                </div>
+                <div class="details">
+                 <div>
+                  <span>
+                   START DATE
+                  </span>
+                  <span class="value">
+                   21 Apr, 2023 09:00 AM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   END DATE
+                  </span>
+                  <span class="value">
+                   24 Apr, 2023 18:00 PM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   DAY(S)
+                  </span>
+                  <span class="value">
+                   2.0
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   LEAVE TYPE
+                  </span>
+                  <span class="value">
+                   Hospital Leave
+                  </span>
+                 </div>
+                </div>
+               </div>
+               <div class="leave-card approved">
+                <div class="header">
+                 <img alt="Profile picture of Nishant Talwar" height="50" src="./assets/img/Heatmap/Avatar.svg" width="50"/>
+                 <div class="name">
+                  Nishant Talwar
+                 </div>
+                 <div class="actions">
+                  <button class="approve">
+                   APPROVED
+                  </button>
+                 </div>
+                </div>
+                <div class="details">
+                 <div>
+                  <span>
+                   START DATE
+                  </span>
+                  <span class="value">
+                   27 Feb, 2023 14:00 PM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   END DATE
+                  </span>
+                  <span class="value">
+                   28 Feb, 2023 18:00 PM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   DAY(S)
+                  </span>
+                  <span class="value">
+                   1.5
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   LEAVE TYPE
+                  </span>
+                  <span class="value">
+                   Sick Leave
+                  </span>
+                 </div>
+                </div>
+               </div>
+               <div class="leave-card approved">
+                <div class="header">
+                 <img alt="Profile picture of Simon Minter" height="50" src="./assets/img/Heatmap/Avatar.svg" width="50"/>
+                 <div class="name">
+                  Simon Minter
+                 </div>
+                 <div class="actions">
+                  <button class="approve">
+                   APPROVED
+                  </button>
+                 </div>
+                </div>
+                <div class="details">
+                 <div>
+                  <span>
+                   START DATE
+                  </span>
+                  <span class="value">
+                   22 Feb, 2023 09:00 AM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   END DATE
+                  </span>
+                  <span class="value">
+                   31 Mar, 2023 09:00 AM
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   DAY(S)
+                  </span>
+                  <span class="value">
+                   0.5
+                  </span>
+                 </div>
+                 <div>
+                  <span>
+                   LEAVE TYPE
+                  </span>
+                  <span class="value">
+                   Sick Leave
+                  </span>
+                 </div>
+                </div>
+               </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      new DataTable("#leaveRequestsTable", {
+        order: [[3, "desc"]],
+      });
+    </script>
+    <script>
+      function drawCircle(canvasId, percentage) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext("2d");
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = 35;
+        const startAngle = -0.5 * Math.PI;
+        const endAngle = (percentage / 100) * 2 * Math.PI + startAngle;
+
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "#4b4bff";
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+        ctx.stroke();
+
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "20px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(percentage + "%", centerX, centerY);
+      }
+
+      drawCircle("sickLeave", 50);
+      drawCircle("annualLeave", 30);
+      drawCircle("emergencyLeave", 20);
+    </script>
+  </body>
+</html>
