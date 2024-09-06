@@ -532,7 +532,7 @@ table.dataTable > tbody > tr > th, table.dataTable > tbody > tr > td:nth-child(2
 }
 
 #notificationPanel {
-    /* display: none; */
+    display: none;
     position: absolute;
     right: -5vw;
     width: 28vw;
